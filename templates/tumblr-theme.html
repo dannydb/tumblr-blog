@@ -1,458 +1,281 @@
-<html class="no-js">
-    <head>
-        <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary}  {PostSummary}{/block:PostSummary}{/block:PermalinkPage} : NPR</title>
+<!DOCTYPE html>
+<html lang="{block:English}en{/block:English}{block:French}fr{/block:French}{block:German}de{/block:German}{block:Japanese}ja{/block:Japanese}{block:Italian}it{/block:Italian}{block:Spanish}es{/block:Spanish}{block:Polish}pl{/block:Polish}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=10.0,initial-scale=1.0" />
+  <meta name="viewport" id="viewport-iphone5" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)" />
+    <title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}</title>
+    {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+    <script type="text/javascript" src="http://static.dannydebelius.com/js/modernizr.min.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/wqi6zbd.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <link rel="apple-touch-icon" href="{PortraitURL-128}">
+    <link rel="shortcut icon" href="http://static.dannydebelius.com/images/monogram-favicon.png">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    <link rel="stylesheet" href="http://static.dannydebelius.com/css/style.css" type="text/css" media="all">
+    <style type="text/css">
 
-        <meta charset="utf-8">
-        <meta name="description" content="{block:IndexPage}{block:Description}{MetaDescription}{/block:Description}{/block:IndexPage}{block:PermalinkPage}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:PermalinkPage}" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        img {max-width: 100%;height: auto !important;}
 
-        <meta name="font:Body" content="'Helvetica Neue', Helvetica, Arial, sans-serif"/>
+        .clearfix {zoom:1;}
+        .clearfix:before, .clearfix:after {
+          content: "\0020";
+          display: block;
+          height: 0;
+          overflow: hidden; }
+        .clearfix:after {clear: both;}
 
-        <!-- Appearance option -->
-        <meta name="if:Two column posts" content="1"/>
-        <meta name="if:Show blog title" content="1"/>
-        <meta name="if:Show blog description" content="1"/>
-        <meta name="if:Show profile photo" content="0"/>
-        <meta name="if:Use endless scrolling" content="1"/>
-        <meta name="if:Use larger font for quotes" content="0"/>
-        <meta name="if:Show image shadows" content="1"/>
-        <meta name="if:Show post notes" content="1"/>
-        <meta name="if:Show copyright in footer" content="0"/>
-        <meta name="text:Disqus Shortname" content="" />
+        /*Tumblr inherited */
+        iframe#tumblr_controls {}
+        .search_query {}
+        .read_more_container a {}
 
-        <link rel="shortcut icon" href="http://www.npr.org/favicon.ico" />
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
-
-        <!-- HTML5 Shiv -->
-        <!--[if lt IE 9]>
-                <script src="http://static.tumblr.com/hriofhd/Qj0m8pn7q/html5shiv.js"></script>
-        <![endif]-->
-        <script type="text/javascript" src="http://{{ S3_BUCKETS[0] }}/{{ PROJECT_SLUG }}/js/lib/modernizr.custom.js"></script>
-
-        <!-- Reset CSS -->
-        <link rel="stylesheet" href="http://static.tumblr.com/thpaaos/DIcklyl4z/reset.css" type="text/css">
-
-        <!-- Project CSS -->
-        <link rel="stylesheet" href="http://{{ S3_BUCKETS[0] }}/{{ PROJECT_SLUG }}/css/tumblr.less.css" />
-
-        <!--[if lt IE 9]>
-            <style type="text/css">
-                #container { width: 980px; }
-            </style>
-        <![endif]-->
+        @media only screen and (max-width: 1023px) {
 
 
-        <!-- GOOGLE ANALYTICS -->
-        <script type="text/javascript">
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-5828686-4']);
-            _gaq.push(['_trackPageview']);
-            (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-        </script>
+        }
 
-        {% include "_social.html" %}
-
-        <script type="text/javascript" src="http://assets.tumblr.com/javascript/jquery-1.7.2.min.js"></script>
-        <script type="text/javascript" src="http://{{ S3_BUCKETS[0] }}/{{PROJECT_SLUG }}/js/app-tumblr.js"></script>
+        @media handheld, only screen and (max-width: 767px) {
 
 
-    </head>
-    <body class="{block:IndexPage}index-page{/block:IndexPage}{block:PermalinkPage}permalink-page{/block:PermalinkPage}">
-        <div id="nav">
-            <ul class="site-links">
-                <li class="npr"><a href="http://npr.org"><img src="http://media.npr.org/chrome/news/nprlogo_138x46.gif" alt="NPR" /></a></li>
-                <li class="news"><a href="http://www.npr.org/sections/news/">News</a></li>
-                <li class="arts"><a href="http://www.npr.org/sections/arts/">Arts &amp; Life</a></li>
-                <li class="music"><a href="http://www.npr.org/music/">Music</a></li>
-                <li class="listen"><a href="http://www.npr.org/listen/">Listen</a></li>
-            </ul>
-        </div>
+        }
 
-        <section id="container" class="group">
-            <header>
-                <div id="blog_info">
-
-                    {block:IfShowBlogTitle}
-                    <h1><a href="/">{Title}</a></h1>
-                    {/block:IfShowBlogTitle}
-
-                    <div class="project-prompt">{% include "_prompt.html" %}</div>
-
-                    <div class="mobile-prompt">
-                        <span></span>
-                        <p><strong>Use your smartphone.</strong> Visit <b>{{ PROJECT_SHORTLINK }}</b>.</p>
-                    </div>
-
-                    {block:IndexPage}
-                    <p class="project-credits">
-                        Credits: {{ PROJECT_CREDITS }}<br />
-                        Questions? Problems? E-mail <a href="mailto:tumblr@npr.org">tumblr@npr.org</a>.
-                    </p>
-                    {/block:IndexPage}
-                </div>
-            </header>
-
-            <section id="post-wrap">
-
-                <ul id="posts">
-                <!-- START POSTS -->
-                {block:Posts}
-                    {block:IndexPage}
-                    <li class="post group">
-                        <div class="wrap">
-
-                            <ul class="post_info timestamp">
-                                <li class="timestamp-wrap">
-                                {TimeAgo}
-                                </li>
-                            </ul>
-
-                            {block:Photo}
-                            <section class="media">
-                                 <a href="{Permalink}" class="link">
-                                    <span class="img-holder" style="background-image: url('{PhotoURL-400}');"></span>
-                                 </a>
-                            </section>
-                            {block:Caption}
-                            <section class="caption excerpt">
-                                <a href="{Permalink}" class="link">
-                                {Caption}
-                                </a>
-
-                                <ul class="post_info comments">
-                                    <li class="more"><a href="{Permalink}">What would you do? Read / Comment &rsaquo;</a></li>
-                                </ul>
-                            </section>
-                            {/block:Caption}
-                            {/block:Photo}
-                        </div>
-                    </li>
-                    {/block:IndexPage}
-
-
-                    {block:PermalinkPage}
-                    <li class="post group">
-                        <div class="wrap">
-
-                            <!-- BACK/NEXT PAGINATION FOR PERMALINK PAGES -->
-                            {block:PermalinkPagination}
-                            <section class="post-pagination">
-                                {block:NextPost}<a href="{NextPost}" class="previous-post">&#171; Previous Post</a>{/block:NextPost}
-                                {block:PreviousPost}<a href="{PreviousPost}" class="next-post">Next Post &#187;</a>{/block:PreviousPost}
-                            </section>
-                            {/block:PermalinkPagination}
-
-                            {block:Photo}
-                            <section class="top media" style="display:block;">
-                                 <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
-                            </section>
-                            {/block:Photo}
-
-                            <section class="group caption_and_post_info
-                                {block:Photo} after_top_part isphoto{/block:Photo}
-                            ">
-                                <ul class="post_info">
-                                    <li class="timestamp-wrap">
-                                    {block:Date}{Month} {DayOfMonth}, {Year} {12Hour}:{Minutes} {AmPm}{/block:Date}
-                                    </li>
-                                </ul>
-
-                                {block:Text}
-                                <section class="caption group">
-                                    {block:Title}<h2>{Title}</h2>{/block:Title}
-                                    <div class="cont group">{Body}</div>
-                                    {block:ContentSource}
-                                        <div class="cont content_source">
-                                            <a href="{SourceURL}">
-                                                {lang:Source}:
-                                                {block:SourceLogo}
-                                                    <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
-                                                {/block:SourceLogo}
-                                                {block:NoSourceLogo}
-                                                    {SourceTitle}
-                                                {/block:NoSourceLogo}
-                                            </a>
-                                        </div>
-                                    {/block:ContentSource}
-                                </section>
-                                {/block:Text}
-
-                                {block:Photo}
-                                <section class="caption group">
-                                    {block:Caption}
-                                        <div class="cont">{Caption}</div>
-                                    {/block:Caption}
-                                    {block:ContentSource}
-                                        <div class="cont content_source">
-                                            <a href="{SourceURL}">
-                                                {lang:Source}:
-                                                {block:SourceLogo}
-                                                    <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
-                                                {/block:SourceLogo}
-                                                {block:NoSourceLogo}
-                                                    {SourceTitle}
-                                                {/block:NoSourceLogo}
-                                            </a>
-                                        </div>
-                                    {/block:ContentSource}
-                                </section>
-                                {/block:Photo}
-                            </section>
-
-                            {block:IfDisqusShortname}
-                            <div id="disqus_thread"></div>
-                            <script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
-                            <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">View the discussion thread.</a></noscript>
-                            {/block:IfDisqusShortname}
-
-                            {block:PostNotes}
-                            <section class="post_notes" name="notes">
-                                <h4>Notes ({NoteCount})</h4>
-                                {PostNotes}
-                            </section>
-                            {/block:PostNotes}
-
-                        </div> <!-- end .wrap -->
-                    </li>
-                    {/block:PermalinkPage}
-
-                    {/block:Posts}
-                    <!-- END POSTS -->
+    </style>
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 8]><script src="http://static.dannydebelius.com/js/css3-mediaqueries.js"></script><![endif]-->
+    
+    
+</head>
+<body class="{block:IndexPage}index {/block:IndexPage}{block:PermalinkPage}permalink {block:Posts}{block:Text}text {/block:Text}{block:Photo}photo {/block:Photo}{block:Photoset}photo {/block:Photoset}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audiopost  {/block:Audio}{block:Video}videopost {/block:Video}{/block:Posts}{/block:PermalinkPage}">
+    <header id="header">
+        <div class="header-wrap row topbar">
+            <nav class="eight columns centered">
+                <h1 id="logo"><a href="/">{Title}</a></h1>
+                <ul id="nav" class="right">
+                    {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
+                    <li><a href="/archive">{lang:Archive}</a></li>
                 </ul>
+                <form id="search" action="/search" method="get">
+                    <input type="text" placeholder="{lang:Search}" name="q" value="{SearchQuery}">
+                    <input type="submit" value="{lang:Search}">
+                </form>
+            </nav>
+        </div>
+    </header>
+    <section class="content">
 
-                <footer id="footer">
+
+        {block:SearchPage}
+        <div class="result">
+            <p>{lang:Found SearchResultCount results for SearchQuery 2}</p>
+            {block:NoSearchResults}<p>{lang:No results for SearchQuery 2}</p>{/block:NoSearchResults}
+        </div>
+        {/block:SearchPage}
+        {block:TagPage}<div class="result"><p>{lang:TagResultCount posts tagged Tag 3}</p></div>{/block:TagPage}
+
+        {block:Posts}
+        <article class="post {TagsAsClasses}">
+            {block:Date}
+            <div class="row">
+                <div class="eight columns centered">
+                    {block:PermalinkPage}<h6 class="pubdate">{DayOfWeek}, {Month} {DayOfMonth}, {Year}</h6>{/block:PermalinkPage}
+                    {block:IndexPage}<h6 class="pubdate"><a href="{Permalink}" class="permalink">{DayOfWeek}, {Month} {DayOfMonth}, {Year}</a></h6>{/block:IndexPage}
+                </div>
+            </div>
+            {/block:Date}
+            {block:Text}
+            <div class="text row">
+                <div class="eight columns centered">
+                    {block:Title}<h3>{Title}</h3>{/block:Title}
+                    {Body}
+                </div>
+            </div>
+            {/block:Text}
+            {block:Quote}
+            <div class="quote row">
+                <div class="ten columns centered">
+                    <blockquote class="words {Length}">&#8220;{Quote}&#8221;</blockquote>
+                    {block:Source}<p class="source">&mdash; {Source}</p>{/block:Source}
+                </div>
+            </div>
+            {/block:Quote}
+            {block:Link}
+            <div class="link row">
+                <div class="eight columns centered">
+                    <h3><a href="{URL}" {Target}>{Name}</a></h3>
+                    {block:Description}<div class="caption">{Description}</div>{/block:Description}
+                </div>
+            </div>
+            {/block:Link}
+            {block:Video}
+            <div class="video row">
+                <div class="ten columns centered">
+                    {Video-700}
+                    {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                </div>
+            </div>
+            {/block:Video}
+            {block:Audio}
+            <div class="audio row">
+                <div class="ten columns centered">
+                    {block:AlbumArt}<img src="{AlbumArtURL}" alt="">{/block:AlbumArt}
+                    {AudioPlayerBlack}
+                    {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                </div>
+            </div>
+            {/block:Audio}
+            {block:Photo}
+            <div class="photo">
+            
                     {block:PermalinkPage}
-                        <nav class="pagination-index">
-                            <a href="/">See More {{ PROJECT_NAME }} Entries&nbsp;&rsaquo;</a>
-                        </nav>
+                        {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
+                        {block:Caption}
+                        <div class="caption row">
+                            <div class="ten columns centered">{Caption}</div>
+                        </div>{/block:Caption}
                     {/block:PermalinkPage}
-
-                    {block:Pagination}
-                        <nav class="pagination">
-                            <section class="buttons">
-                                {block:PreviousPage}<a href="{PreviousPage}" class="left">{lang:Previous page}<span class="arrow"></span></a>{/block:PreviousPage}
-                                {block:NextPage}<a href="{NextPage}" class="right">{lang:Next page}<span class="arrow"></span></a>{block:NextPage}
-                            </section>
-                            <section class="disabled buttons">
-                                <li class="left"><span class="arrow"></span></li>
-                                <li class="right"><span class="arrow"></span></li>
-                            </section>
-                            <section class="count">Page  {CurrentPage} / {TotalPages}</section>
-                        </nav>
-                    {/block:Pagination}
-                </footer>
-            </section> <!-- #post-wrap -->
-        </section> <!-- #container -->
-
-        <div id="project-form" class="modal">{% include "_form.html" %}</div>
-
-        <div class="modal-bg"></div>
-
-        {block:IfUseEndlessScrolling}
-        <script type="text/javascript">
-            var Tumblelog = {};
-
-            // AJAX
-            Tumblelog.Ajax = (function(url, callbackFunction) {
-                this.bindFunction = function (caller, object) {
-                    return function() {
-                        return caller.apply(object, [object]);
-                    };
-                };
-
-                this.stateChange = function (object) {
-                    if (this.request.readyState==4) {
-                        this.callbackFunction(this.request.responseText);
-                    }
-                };
-
-                this.getRequest = function() {
-                    if (window.ActiveXObject)
-                        return new ActiveXObject('Microsoft.XMLHTTP');
-                    else if (window.XMLHttpRequest)
-                        return new XMLHttpRequest();
-                    return false;
-                };
-
-                this.postBody = (arguments[2] || "");
-                this.callbackFunction=callbackFunction;
-                this.url=url;
-                this.request = this.getRequest();
-
-                if(this.request) {
-                    var req = this.request;
-                    req.onreadystatechange = this.bindFunction(this.stateChange, this);
-
-                    if (this.postBody!=="") {
-                        req.open("POST", url, true);
-                        req.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-                        req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                        req.setRequestHeader('Connection', 'close');
-                    } else {
-                        req.open("GET", url, true);
-                    }
-
-                    req.send(this.postBody);
-                }
-            });
-
-            // Infinite Scroll
-            Tumblelog.Infinite = (function() {
-
-                var _$window          = $(window);
-                var _$posts           = $('#posts');
-                var _trigger_post     = null;
-
-                var _current_page     = {CurrentPage};
-                var _total_pages      = {TotalPages};
-                var _url              = document.location.href;
-                var _infinite_timeout = null;
-                var _is_loading       = false;
-                var _posts_loaded     = false;
-
-                var _Ajax = Tumblelog.Ajax;
-
-                function init() {
-                    set_trigger();
-                    enable_scroll();
-                }
-
-                function set_trigger () {
-                    var $all_posts = _$posts.find('li.post');
-
-                    if (!_posts_loaded) {
-                        _posts_loaded = $all_posts.length;
-                    }
-
-                    if (_posts_loaded >= 4) {
-                        _trigger_post = _$posts.find('li.post:eq(' + ($all_posts.length - 4) + ')').get(0);
-                    } else if (_posts_loaded >= 3) {
-                        _trigger_post = _$posts.find('li.post:eq(' + ($all_posts.length - 3) + ')').get(0);
-                    } else {
-                        _trigger_post = _$posts.find('li.post:last').get(0);
-                    }
-
-                };
-
-                function in_viewport (el) {
-                    if (el == null) return;
-                    var top = el.offsetTop;
-                    var height = el.offsetHeight;
-
-                    while (el.offsetParent) {
-                        el = el.offsetParent;
-                        top += el.offsetTop;
-                    }
-
-                    return (top < (window.pageYOffset + window.innerHeight));
-                };
-
-                function enable_scroll() {
-                    $('#footer .pagination').hide();
-                    _$window.scroll(function(){
-                        clearTimeout(_infinite_timeout);
-                        infinite_timeout = setTimeout(infinite_scroll, 100);
-                    });
-                }
-
-                function disable_scroll() {
-                    clearTimeout(_infinite_timeout);
-                    $(window).unbind('scroll');
-                }
-
-                function infinite_scroll() {
-                    if (_is_loading) return;
-
-                    if (in_viewport(_trigger_post)) {
-                        load_more_posts(); // w00t
-                    }
-                };
-
-                function load_more_posts() {
-                    if (_is_loading) return;
-                    _is_loading = true;
-
-                    // Build URL
-                    if (_url.charAt(_url.length - 1) != '/') _url += '/';
-                    if (_current_page === 1) _url += 'page/1';
-                    _current_page++;
-                    _url = _url.replace('page/' + (_current_page - 1), 'page/' + _current_page);
-
-                    // Fetch
-                    _Ajax(_url, function(data) {
-                        var new_posts_html = data.split('<!-- START' + ' POSTS -->')[1].split('<!-- END' + ' POSTS -->')[0];
-                        var $new_posts = $('#posts', data);
-
-                        // Insert posts and update counters
-                        $('#posts').append(new_posts_html);
-
-                        _posts_loaded = $new_posts.find('li.post').length;
-                        // make the messages shorter, in our app-tumblr.js
-                        trimMessages();
-
-                        if ((_posts_loaded > 0) && (_current_page < _total_pages)) {
-                            set_trigger();
-                            _is_loading = false;
-                        } else {
-                            disable_scroll();
-                        }
-                    });
-
-                    // Stats
-                    {block:IfGoogleAnalyticsID}
-                        if (typeof window._gaq != 'undefined') {
-                            _gaq.push(['_trackPageview', _url]);
-                        }
-                    {/block:IfGoogleAnalyticsID}
-                }
-
-                return {
-                    init: init
-                };
-            });
-
-            $(function() {
-                {block:IndexPage}
-                if ( !($.browser.msie && (parseInt($.browser.version, 10) < 9) ) ) {
-                    var InfiniteScroll = new Tumblelog.Infinite;
-                    InfiniteScroll.init();
-                }
-                {/block:IndexPage}
-            });
-        </script>
-        {/block:IfUseEndlessScrolling}
-
-        <!-- CHARTBEAT -->
-        <script type="text/javascript">
-            var _sf_async_config={};
-            /** CONFIGURATION START **/
-            _sf_async_config.uid = 18888;
-            _sf_async_config.domain = "npr.org";
-            /** CONFIGURATION END **/
-            (function(){
-                function loadChartbeat() {
-                    window._sf_endpt=(new Date()).getTime();
-                    var e = document.createElement("script");
-                    e.setAttribute("language", "javascript");
-                    e.setAttribute("type", "text/javascript");
-                    e.setAttribute("src",
-                        (("https:" == document.location.protocol) ?
-                         "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" :
-                         "http://static.chartbeat.com/") +
-                        "js/chartbeat.js");
-                    document.body.appendChild(e);
-                }
-                var oldonload = window.onload;
-                window.onload = (typeof window.onload != "function") ?
-                    loadChartbeat : function() { oldonload(); loadChartbeat(); };
-            })();
-        </script>
+                    {block:IndexPage}
+                        <div class="row">
+                            {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" class="six columns"/>{LinkCloseTag}
+                            {block:Caption}
+                            <div class="caption five columns">
+                                <div class="">{Caption}</div>
+                            </div>{/block:Caption}
+                        </div>
+                    {/block:IndexPage}
+                        
+            </div>
+            {/block:Photo}
+            {block:Photoset}
+            <div class="photoset">
+            {block:PermalinkPage}
+                {block:Caption}<div class="caption row">
+                    <div class="ten columns centered">{Caption}</div>
+                </div>{/block:Caption}
+                {block:Photos}
+                    {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
+                    {block:Caption}<div class="caption single ten columns centered">{Caption}</div>{/block:Caption}
+                {/block:Photos}
+            {/block:PermalinkPage}
+            {block:IndexPage}
+            <div class="row">
+                {block:Caption}<div class="caption five columns push-six">
+                    {Caption}
+                </div>{/block:Caption}
+                <div class="six columns pull-six">
+                {block:Photos}
+                    {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}
+                    {block:Caption}<div class="caption single">{Caption}</div>{/block:Caption}
+                {/block:Photos}
+                </div>
+            {/block:IndexPage}
+            </div>
+            {/block:Photoset}
+            {block:Chat}
+            <div class="chat row">
+                <div class="eight columns centered">
+                    {block:Title}<h3>{Title}</h3>{/block:Title}
+                    <ul class="conversation">
+                        {block:Lines}
+                        <li class="line {Alt}">
+                            {block:Label}<span class="person">{Label}</span>{/block:Label}
+                            <span class="person-said">{Line}</span>
+                        </li>
+                        {/block:Lines}
+                    </ul>
+                </div>
+            </div>
+            {/block:Chat}
+            {block:Answer}
+            <div class="answer row">
+                <div class="ten columns centered">
+                    <img src="{AskerPortraitURL-40}">
+                    {Asker}
+                    {Question}
+                    {Answer}
+                </div>
+            </div>
+            {/block:Answer}
+            </div>
+        </article>
+        {/block:Posts}
 
 
-        {block:IfUseEndlessScrolling}<script type="text/javascript" src="http://assets.tumblr.com/javascript/tumblelog.js"></script>{/block:IfUseEndlessScrolling}
-    </body>
+    </section><!--close content-->
+    
+    <nav class="pagination-wrapper">
+        {block:PermalinkPagination}
+        <div class="row">
+            <div class="pagination ten columns centered">
+                {block:PreviousPost}<a class="prev"href="{PreviousPost}"><i class="icon-angle-left"></i>{lang:Previous post}</a>{/block:PreviousPost}
+                {block:NextPost}<a class="next" href="{NextPost}">{lang:Next post}<i class="icon-angle-right"></i></a>{/block:NextPost}
+            </div>
+        </div>
+        {/block:PermalinkPagination}
+
+        {block:Pagination}
+        <div class="row">
+            <div class="pagination jump ten columns centered">
+                {block:PreviousPage}<a class="prev" href="{PreviousPage}"><i class="icon-angle-left"></i>{lang:Previous}</a>{/block:PreviousPage}
+    
+                {block:JumpPagination length="5"}
+                    {block:CurrentPage}<span class="current-page">{PageNumber}</span>{/block:CurrentPage}
+                    {block:JumpPage}<a class="jump-page" href="{URL}">{PageNumber}</a>{/block:JumpPage}
+                {/block:JumpPagination}
+    
+                {block:NextPage}<a class="next" href="{NextPage}">{lang:Next}<i class="icon-angle-right"></i></a>{/block:NextPage}
+            </div>
+        </div>
+        {/block:Pagination}    
+    </nav>
+    
+    <footer>
+        <div class="row">
+            <div class="about ten columns centered">
+                <h3>About</h3>
+                <div class="description">
+                <img src="{PortraitURL-128}">
+                
+                {block:Description}{Description}{/block:Description}</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="elsewhere ten columns centered">
+                <h3>Elsewhere</h3>
+                <a href="http://twitter.com/dannydb"><i class="icon-twitter"></i> Twitter</a>
+                <a href="http://github.com/dannydb"><i class="icon-github"></i> GitHub</a>
+                <a href="http://facebook.com/danny.debelius"><i class="icon-facebook"></i> Facebook</a>
+                <a href="{RSS}"><i class="icon-rss"></i> RSS</a>
+                
+                <div id="copyright">&copy; {CopyrightYears} Danny DeBelius</div>
+
+            </div>
+        </div>
+    </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://static.dannydebelius.com/js/fitvids.min.js"></script>
+    <script type="text/javascript" src="http://static.dannydebelius.com/js/jquery.rm.js"></script>
+    <script>
+    
+    $(function() {
+        $(".video").fitVids({ customSelector: "iframe[src^='about:blank']"});
+    });
+    </script>
+    <script type="text/javascript">
+    
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-146179-4']);
+        _gaq.push(['_setDomainName', 'dannydebelius.com']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    
+    </script>
+</body>
 </html>
