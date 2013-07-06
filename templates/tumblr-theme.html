@@ -7,13 +7,13 @@
   <meta name="viewport" id="viewport-iphone5" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)" />
     <title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}</title>
     {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
-    <script type="text/javascript" src="http://static.dannydebelius.com/js/modernizr.min.js"></script>
+    <script type="text/javascript" src="http://{{ S3_BUCKETS[0] }}/{{ PROJECT_SLUG }}/js/modernizr.min.js"></script>
     <script type="text/javascript" src="//use.typekit.net/wqi6zbd.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <link rel="apple-touch-icon" href="{PortraitURL-128}">
-    <link rel="shortcut icon" href="http://static.dannydebelius.com/images/monogram-favicon.png">
+    <link rel="shortcut icon" href="http://{{ S3_BUCKETS[0] }}/{{ PROJECT_SLUG }}/img/monogram-favicon.png">
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
-    <link rel="stylesheet" href="http://static.dannydebelius.com/css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="http://{{ S3_BUCKETS[0] }}/{{ PROJECT_SLUG }}/css/tumblr.less.css" />
     <style type="text/css">
 
         img {max-width: 100%;height: auto !important;}
@@ -255,8 +255,8 @@
     </footer>
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://static.dannydebelius.com/js/fitvids.min.js"></script>
-    <script type="text/javascript" src="http://static.dannydebelius.com/js/jquery.rm.js"></script>
+    <script type="text/javascript" src="http://{{ S3_BUCKETS[0] }}/{{ PROJECT_SLUG }}/js/fitvids.min.js"></script>
+    <script type="text/javascript" src="http://{{ S3_BUCKETS[0] }}/{{ PROJECT_SLUG }}/js/jquery.rm.js"></script>
     <script>
     
     $(function() {
