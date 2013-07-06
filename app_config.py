@@ -29,10 +29,10 @@ PROJECT_SHORTLINK = 'npr.org/foo'
 """
 DEPLOYMENT
 """
-PRODUCTION_S3_BUCKETS = ['apps.npr.org', 'apps2.npr.org']
+PRODUCTION_S3_BUCKETS = ['static.dannydebelius.com']
 PRODUCTION_SERVERS = ['54.214.20.225']
 
-STAGING_S3_BUCKETS = ['stage-apps.npr.org']
+STAGING_S3_BUCKETS = ['static.dannydebelius.com']
 STAGING_SERVERS = ['54.214.20.232']
 
 # Should code be deployed to the web/cron servers?
@@ -136,7 +136,7 @@ def configure_targets(deployment_target):
         TUMBLR_URL = '%s.tumblr.com' % PROJECT_SLUG
         TUMBLR_BLOG_ID = PROJECT_SLUG
         STATIC_URL = 'http://%s/%s/' % (S3_BUCKETS[0], PROJECT_SLUG)
-        STATIC_CSS = '%scss/tumblr.less.css' % STATIC_URL
+        STATIC_CSS = '%scss/style.less.css' % STATIC_URL
 
     elif deployment_target == 'staging':
         S3_BUCKETS = STAGING_S3_BUCKETS
@@ -145,16 +145,16 @@ def configure_targets(deployment_target):
         TUMBLR_URL = 'staging-%s.tumblr.com' % PROJECT_SLUG
         TUMBLR_BLOG_ID = 'staging-%s' % PROJECT_SLUG
         STATIC_URL = 'http://%s/%s/' % (S3_BUCKETS[0], PROJECT_SLUG)
-        STATIC_CSS = '%scss/tumblr.less.css' % STATIC_URL
+        STATIC_CSS = '%scss/style.less.css' % STATIC_URL
 
     else:
         S3_BUCKETS = None
-        SERVERS = ['127.0.0.1:8000']
+        SERVERS = ['localhost:8000']
         DEBUG = True
         TUMBLR_URL = None
         TUMBLR_BLOG_ID = None
-        STATIC_URL = 'http://127.0.0.1:8000/'
-        STATIC_CSS = '%sless/tumblr.less' % STATIC_URL
+        STATIC_URL = 'http://localhost:8000/'
+        STATIC_CSS = '%sless/style.less' % STATIC_URL
 
 """
 Run automated configuration
