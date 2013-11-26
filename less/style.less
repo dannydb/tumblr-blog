@@ -1,326 +1,104 @@
-@import "less/mixins.less";
-@import "less/reset.less";
-@import "less/icons.less";
-@import "less/grid.less";
+// Core variables and mixins
+@import "less/lib/bootstrap/variables.less";
+@import "less/lib/bootstrap/mixins.less";
 
-//
-// Variables
-// --------------------------------------------------
+// Reset
+@import "less/lib/bootstrap/normalize.less";
+@import "less/lib/bootstrap/print.less";
 
+// Core CSS
+@import "less/lib/bootstrap/scaffolding.less";
+@import "less/lib/bootstrap/type.less";
+@import "less/lib/bootstrap/code.less";
+@import "less/lib/bootstrap/grid.less";
+// @import "less/lib/bootstrap/tables.less";
+// @import "less/lib/bootstrap/forms.less";
+@import "less/lib/bootstrap/buttons.less";
 
-// Global values
-// --------------------------------------------------
+// Components
+// @import "less/lib/bootstrap/component-animations.less";
+@import "less/lib/bootstrap/glyphicons.less";
+// @import "less/lib/bootstrap/dropdowns.less";
+// @import "less/lib/bootstrap/button-groups.less";
+// @import "less/lib/bootstrap/input-groups.less";
+// @import "less/lib/bootstrap/navs.less";
+// @import "less/lib/bootstrap/navbar.less";
+// @import "less/lib/bootstrap/breadcrumbs.less";
+// @import "less/lib/bootstrap/pagination.less";
+// @import "less/lib/bootstrap/pager.less";
+// @import "less/lib/bootstrap/labels.less";
+// @import "less/lib/bootstrap/badges.less";
+// @import "less/lib/bootstrap/jumbotron.less";
+// @import "less/lib/bootstrap/thumbnails.less";
+// @import "less/lib/bootstrap/alerts.less";
+// @import "less/lib/bootstrap/progress-bars.less";
+// @import "less/lib/bootstrap/media.less";
+// @import "less/lib/bootstrap/list-group.less";
+// @import "less/lib/bootstrap/panels.less";
+// @import "less/lib/bootstrap/wells.less";
+// @import "less/lib/bootstrap/close.less";
 
+// Components w/ JavaScript
+// @import "less/lib/bootstrap/modals.less";
+// @import "less/lib/bootstrap/tooltip.less";
+// @import "less/lib/bootstrap/popovers.less";
+// @import "less/lib/bootstrap/carousel.less";
 
-// Grays
-// -------------------------
-@black:                 #000;
-@grayDarker:            #222;
-@grayDark:              #333;
-@gray:                  #555;
-@grayLight:             #aaa;
-@grayLighter:           #ddd;
-@white:                 #fff;
+// Utility classes
+@import "less/lib/bootstrap/utilities.less";
+@import "less/lib/bootstrap/responsive-utilities.less";
 
-
-// Accent colors
-// -------------------------
-@dannyBlue: 			#0B8DC1;
-@dannyRed: 				#d92632;
-@blue:                  #049cdb;
-@blueDark:              #0064cd;
-@green:                 #46a546;
-@red:                   #9d261d;
-@yellow:                #ffc40d;
-@orange:                #f89406;
-@pink:                  #c3325f;
-@purple:                #7a43b6;
-@rustOrange: 			#D67D00;
-
-
-// Scaffolding
-// -------------------------
-@bodyBackground:        @white;
-@textColor:             @grayDark;
-
-
-// Links
-// -------------------------
-@linkColor:             @dannyRed;
-@linkColorHover:        darken(@linkColor, 15%);
-
-
-// Typography
-// -------------------------
-@sansFontFamily:        "freight-sans-pro","Helvetica Neue", Helvetica, Arial, sans-serif;
-@serifFontFamily:       "freight-text-pro",Georgia, "Times New Roman", Times, serif;
-@monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
-
-@baseFontSize:          21px;
-@baseFontFamily:        @sansFontFamily;
-@baseLineHeight:        30px;
-@altFontFamily:         @sansFontFamily;
-
-@headingsFontFamily:    @altFontFamily; // empty to use BS default, @baseFontFamily
-@headingsFontWeight:    normal;    // instead of browser default, bold
-@headingsColor:         inherit; // empty to use BS default, @textColor
+// @orange: #FF8400;
+// @blue-dark: #3B4044;
+// @gray-dark: #494948;
+// @gray: #E6E1D8;
+// @gray-light: #F7F2E9;
 
 
-// Component sizing
-// -------------------------
-// Based on 14px font-size and 20px line-height
-
-@fontSizeLarge:         @baseFontSize * 1.25; // ~18px
-@fontSizeSmall:         @baseFontSize * 0.85; // ~12px
-@fontSizeMini:          @baseFontSize * 0.75; // ~11px
-
-@paddingLarge:          11px 19px; // 44px
-@paddingSmall:          2px 10px;  // 26px
-@paddingMini:           0 6px;   // 22px
+@salmon: #CF8B6C;
+@tan: #B6A879;
+@red: #FA422A;
+@blue-light: #559595;
+@blue-dark: #0C1D29; 
 
 
-//
-// Scaffolding
-// --------------------------------------------------
-
-
-// Body reset
-// -------------------------
-
-body {
-  margin: 0;
-  font-family: @baseFontFamily;
-  font-size: @baseFontSize;
-  line-height: @baseLineHeight;
-  color: @textColor;
-  background-color: @bodyBackground;
-}
-
-
-// Links
-// -------------------------
-
-a {
-  color: @linkColor;
-  text-decoration: none;
-}
-a:hover {
-  color: @linkColorHover;
-  text-decoration: underline;
-}
-
-
-// Images
-// -------------------------
-
-// Rounded corners
-.img-rounded {
-  .border-radius(6px);
-}
-
-// Add polaroid-esque trim
-.img-polaroid {
-  padding: 4px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0,0,0,.2);
-  .box-shadow(0 1px 3px rgba(0,0,0,.1));
-}
-
-// Perfect circle
-.img-circle {
-  .border-radius(500px); // crank the border-radius so it works with most reasonably sized images
-}
-
-
-//
-// Typography
-// --------------------------------------------------
-
-
-// Body text
-// -------------------------
-
-p {
-  margin: 0 0 @baseLineHeight / 2;
-}
-.lead {
-  margin-bottom: @baseLineHeight;
-  font-size: @baseFontSize * 1.5;
-  font-weight: 200;
-  line-height: @baseLineHeight * 1.5;
-}
-
-
-// Emphasis & misc
-// -------------------------
-
-// Ex: 14px base font * 85% = about 12px
-small   { font-size: 85%; }
-
-strong  { font-weight: bold; }
-em      { font-style: italic; }
-cite    { font-style: normal; }
-
-
-// Headings
-// -------------------------
-
-h1, h2, h3, h4, h5, h6 {
-  margin: (@baseLineHeight / 2) 0;
-  font-family: @headingsFontFamily;
-  font-weight: @headingsFontWeight;
-  line-height: @baseLineHeight;
-  color: @headingsColor;
-  text-rendering: optimizelegibility; // Fix the character spacing for headings
-  small {
-    font-weight: normal;
-    line-height: 1;
-    color: @grayLight;
-  }
-}
-
-h1,
-h2,
-h3 { line-height: @baseLineHeight * 1.5; }
-
-h1 { font-size: @baseFontSize * 2.75; } // ~38px
-h2 { font-size: @baseFontSize * 2.25; } // ~32px
-h3 { font-size: @baseFontSize * 1.75; } // ~24px
-h4 { font-size: @baseFontSize * 1.25; } // ~18px
-h5 { font-size: @baseFontSize; }
-h6 { font-size: @baseFontSize * 0.85; } // ~12px
-
-// Lists
-// --------------------------------------------------
-
-// Unordered and Ordered lists
-ul, ol {
-  padding: 0;
-  margin: 0 0 @baseLineHeight / 2 25px;
-}
-ul ul,
-ul ol,
-ol ol,
-ol ul {
-  margin-bottom: 0;
-}
-li {
-  line-height: @baseLineHeight;
-}
-
-// Remove default list styles
-ul.unstyled,
-ol.unstyled {
-  margin-left: 0;
-  list-style: none;
-}
-
-// Single-line list items
-ul.inline,
-ol.inline {
-  margin-left: 0;
-  list-style: none;
-  & > li {
-    display: inline-block;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-}
-
-// Blockquotes
-blockquote {
-  padding: 0 0 0 30px;
-  margin: 0 0 @baseLineHeight;
-  p {
-    margin-bottom: @baseLineHeight/2;
-    font-style: italic;
-  }
-  small {
-    display: block;
-    line-height: @baseLineHeight;
-    color: @grayLight;
-    &:before {
-      content: '\2014 \00A0';
-    }
-  }
-
-  // Float right with text-align: right
-  &.pull-right {
-    float: right;
-    padding-right: 15px;
-    padding-left: 0;
-    border-right: 5px solid @grayLighter;
-    border-left: 0;
-    p,
-    small {
-      text-align: right;
-    }
-    small {
-      &:before {
-        content: '';
-      }
-      &:after {
-        content: '\00A0 \2014';
-      }
-    }
-  }
-}
-
-// Quotes
-q:before,
-q:after,
-blockquote:before,
-blockquote:after {
-  content: "";
-}
 
 //
 // Layout
 // --------------------------------------------------
 
 #header {
-	margin-bottom: @baseLineHeight;
-	text-align: center;
-	background: @grayLighter;
+	margin-bottom: @line-height-computed;
+	background: @blue-dark;
+
 
 	.header-wrap {
+		.make-row();
 
-		a {
-			color: @grayDarker;
-		}
+		#logo {
+			margin-top: 0;
+			.make-md-column(6);
 
-		#logo a {
-			.hide-text();
-			display: block;
-			margin: 0 auto;
-			width: 150px;
-			height: 150px;
-			background-image: url("http://static.dannydebelius.com/images/monogram.png");
-			background-position: 0 0;
-			background-size: 150px 150px;
-			background-repeat: no-repeat;
-			.transition(.1s all ease-in);
-			.opacity(50);
-
-			&:hover {
-				.opacity(20);
+			a {
+				font-size:200%;
+				color: #fff;
+				font-weight: 400;
 			}
 		}
 
 		#nav {
+			.make-md-column(6);
 			list-style: none;
-			font-family: @altFontFamily;
+			font-family: @font-family-sans-serif;
 			margin: 0;
-			padding-bottom: @baseLineHeight;
-			//border-bottom: 1px solid @grayLight;
+			padding-bottom: @line-height-base;
 
 			li {
 				display: inline-block;
 				line-height: 44px;
 				margin-right: 15px;
 				margin-bottom: 0;
-				font-weight: 100;
+				font-weight: 400;
 				font-size: 18px;
 
 				a {
@@ -338,18 +116,23 @@ blockquote:after {
 section.content {
 
 	.post {
-		margin-bottom: @baseLineHeight * 2;
+		.make-row();
+
+		margin-bottom: @line-height-computed * 2;
+
+		.post-wrapper,
+		.caption {
+			.make-md-column(8);
+		}
 
 		.pubdate {
-			font-family: @altFontFamily;
-			color: @grayLight;
+			font-family: @font-family-base;
+			color: @gray;
 			font-weight: 300;
-			text-align: center;
-			border-top: 1px solid @grayLighter;
-			padding-top: @baseLineHeight/2;
+			padding-top: @line-height-computed/2;
 
 			a {
-				color: @grayLight;
+				color: @gray-light;
 			}
 		}
 
@@ -360,7 +143,7 @@ section.content {
 
 		.quote {
 			blockquote {
-				font-family: @altFontFamily;
+				font-family: @font-family-base;
 				font-size: 42px;
 				line-height: 1.1;
 				font-weight: 300;
@@ -368,7 +151,6 @@ section.content {
 			}
 
 			.source {
-				text-align: center;
 				font-style: italic;
 			}
 		}
@@ -376,7 +158,7 @@ section.content {
 		.link {
 			h3 {
 				a {
-					color: @textColor;
+					color: @text-color;
 					font-weight: 300;
 
 					&:after {
@@ -384,13 +166,6 @@ section.content {
 						font-size: 75%;
 					}
 				}
-			}
-		}
-
-		.link,
-		.text {
-			h3 {
-				text-align: center;
 			}
 		}
 
@@ -406,10 +181,10 @@ section.content {
 
 			div p.caption {
 				font-size: 80%;
-				font-family: @altFontFamily;
+				font-family: @font-family-base;
 				font-weight: 300;
-				margin-top: @baseLineHeight/2*-1;
-				color: @grayLight;
+				margin-top: @line-height-computed/2*-1;
+				color: @gray-light;
 			}
 		}
 
@@ -418,18 +193,17 @@ section.content {
 		.text {
 			img {
 				display: block;
-				margin: 0 auto @baseLineHeight;
+				margin: 0 auto @line-height-computed;
 			}
 
 			.caption.single {
-				text-align: center;
-				margin-bottom: @baseLineHeight;
+				margin-bottom: @line-height-computed;
 			}
 		}
 
 		.photoset {
 			img + .caption {
-				margin-top: @baseLineHeight/2*-1;
+				margin-top: @line-height-computed/2*-1;
 			}
 		}
 
@@ -448,13 +222,13 @@ section.content {
 
 		.photocredit {
 			font-size: 14px;
-			font-family: @altFontFamily;
+			font-family: @font-family-base;
 			text-transform: uppercase;
 			text-align: right;
-			margin-top: @baseLineHeight / 2 * -1;
+			margin-top: @line-height-computed / 2 * -1;
 
 			a {
-				color: @grayLight;
+				color: @gray-light;
 			}
 		}
 	}
@@ -466,7 +240,7 @@ section.content {
 	.photoset {
 		img {
 			display: table;
-			margin: 0 auto @baseLineHeight;
+			margin: 0 auto @line-height-computed;
 			padding: 0 15px;
 		}
 	}
@@ -474,9 +248,9 @@ section.content {
 
 
 .pagination-wrapper {
-	margin-top: @baseLineHeight;
-	background: @grayLighter;
-	padding: @baseLineHeight/2 0;
+	margin-top: @line-height-computed;
+	background: @gray-light;
+	padding: @line-height-computed/2 0;
 
 	+ footer {
 		margin-top: 0;
@@ -490,8 +264,8 @@ section.content {
 		a {
 			display: table-cell;
 			width: 50%;
-			font-family: @altFontFamily;
-			font-size: @fontSizeSmall;
+			font-family: @font-family-base;
+			font-size: @font-size-small;
 			text-transform: uppercase;
 			color: @gray;
 			font-weight: 300;
@@ -519,13 +293,12 @@ section.content {
 		}
 
 		&.jump {
-			text-align: center;
 
 			.current-page,
 			.jump-page,
 			.next,
 			.prev {
-				font-family: @altFontFamily;
+				font-family: @font-family-base;
 				display: inline-block;
 				width: auto;
 				margin: 0 5px;
@@ -540,25 +313,23 @@ section.content {
 
 
 footer {
-	color: @white;
-	background: @grayDarker;
-	font-family: @altFontFamily;
-	font-weight: 300;
-	text-align: center;
-	margin-top: @baseLineHeight;
+	color: #fff;
+	background: @gray-dark;
+	font-family: @font-family-base;
+	margin-top: @line-height-computed;
 
 	h3 {
 		font-weight: bold;
 		font-size: 24px;
 		line-height: 1;
-		margin-bottom: @baseLineHeight/2;
+		margin-bottom: @line-height-computed/2;
 	}
 
 	.about {
 
 		img {
 			.img-circle();
-			margin-bottom: @baseLineHeight/2;
+			margin-bottom: @line-height-computed/2;
 		}
 	}
 
@@ -577,9 +348,9 @@ footer {
 	}
 
 	#copyright {
-		margin-top: @baseLineHeight * 2;
-		color: @grayLight;
-		font-size: @fontSizeSmall;
+		margin-top: @line-height-computed * 2;
+		color: @gray-light;
+		font-size: @font-size-small;
 	}
 }
 
@@ -593,7 +364,7 @@ footer {
 			}
 
 			p {
-				font-family: @altFontFamily;
+				font-family: @font-family-base;
 				font-weight: 300;
 
 				strong {
@@ -604,7 +375,7 @@ footer {
 			.photo {
 				img {
 					display: block;
-					margin: 0 auto @baseLineHeight;
+					margin: 0 auto @line-height-computed;
 					padding: 0;
 				}
 			}
@@ -612,7 +383,6 @@ footer {
 			.text {
 
 				h1 {
-					text-align: center;
 					font-weight: bold;
 				}
 
@@ -620,26 +390,26 @@ footer {
 					text-align: left;
 					font-size: 21px;
 					line-height: 1.1;
-					margin-bottom: @baseLineHeight/2;
+					margin-bottom: @line-height-computed/2;
 				}
 
 				p,
 				li,
 				dd {
-					font-family: @altFontFamily;
+					font-family: @font-family-base;
 				}
 
 				p {
 					font-size: 100%;
-					line-height: @baseLineHeight;
+					line-height: @line-height-computed;
 				}
 
 				dl {
 					dt {
-						font-family: @altFontFamily;
+						font-family: @font-family-base;
 						font-weight: bold;
-						margin-top: @baseLineHeight;
-						margin-bottom: @baseLineHeight/2;
+						margin-top: @line-height-computed;
+						margin-bottom: @line-height-computed/2;
 
 						&:first-child {
 							margin-top: 0;
@@ -647,11 +417,11 @@ footer {
 					}
 					dd {
 						margin-left: 0;
-						margin-bottom: @baseLineHeight/2;
+						margin-bottom: @line-height-computed/2;
 
 						em {
 							display: block;
-							font-size: @fontSizeSmall;
+							font-size: @font-size-small;
 							color: @gray;
 							line-height: 1.5;
 						}
@@ -659,7 +429,7 @@ footer {
 				}
 
 				ul {
-					margin-bottom: @baseLineHeight;
+					margin-bottom: @line-height-computed;
 				}
 			}
 		}
@@ -675,7 +445,7 @@ footer {
 	section.content .quote blockquote,
 	.elsewhere a {
 		font-size: 90%;
-		line-height: @baseLineHeight * 0.9;
+		line-height: @line-height-computed * 0.9;
 
 		p {
 			font-size: 100%;
