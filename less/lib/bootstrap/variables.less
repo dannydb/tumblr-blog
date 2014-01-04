@@ -18,7 +18,7 @@
 // Brand colors
 // -------------------------
 
-@brand-primary:         #FF8400;
+@brand-primary:         #6DBCDB;
 @brand-success:         #5cb85c;
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
@@ -39,12 +39,13 @@
 // Typography
 // -------------------------
 
-@font-family-sans-serif:  futura-pt,"Helvetica Neue", Helvetica, Arial, sans-serif;
+// @font-family-hed: 		  proxima-nova-condensed,"Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  freight-sans-pro,"Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       adelle,Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
-@font-family-base:        @font-family-serif;
+@font-family-base:        @font-family-sans-serif;
 
-@font-size-base:          18px;
+@font-size-base:          21px;
 @font-size-large:         ceil(@font-size-base * 1.25); // ~18px
 @font-size-small:         ceil(@font-size-base * 0.85); // ~12px
 
@@ -58,8 +59,8 @@
 @line-height-base:        1.428571429; // 20/14
 @line-height-computed:    floor(@font-size-base * @line-height-base); // ~20px
 
-@headings-font-family:    @font-family-sans-serif;
-@headings-font-weight:    500;
+@headings-font-family:    @font-family-serif;
+@headings-font-weight:    700;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
 
@@ -625,11 +626,11 @@
 // --------------------------------------------------
 
 // Small screen / tablet
-@container-tablet:             ((720px + @grid-gutter-width));
+@container-tablet:             100%;
 @container-sm:                 @container-tablet;
 
 // Medium screen / desktop
-@container-desktop:            ((940px + @grid-gutter-width));
+@container-desktop:            100%;
 @container-md:                 @container-desktop;
 
 // Large screen / wide desktop
