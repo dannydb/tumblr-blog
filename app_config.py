@@ -36,7 +36,7 @@ STAGING_S3_BUCKETS = ['static.dannydebelius.com']
 STAGING_SERVERS = ['54.214.20.232']
 
 # Should code be deployed to the web/cron servers?
-DEPLOY_TO_SERVERS = 'True'
+DEPLOY_TO_SERVERS = 'False'
 
 # Should the crontab file be installed on the servers?
 # If True, DEPLOY_TO_SERVERS must also be True

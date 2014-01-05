@@ -96,7 +96,9 @@
                 {block:Description}<div class="caption">{Description}</div>{/block:Description}
             {/block:Link}
             {block:Video}
-                {Video-700}
+                <div class="video-wrapper">
+                    {Video-700}
+                </div>
                 {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
             {/block:Video}
             {block:Audio}
@@ -174,8 +176,8 @@
         {block:PermalinkPagination}
         <div class="row">
             <div class="pagination">
-                {block:PreviousPost}<a class="prev"href="{PreviousPost}"><i class="icon-angle-left"></i>{lang:Previous post}</a>{/block:PreviousPost}
-                {block:NextPost}<a class="next" href="{NextPost}">{lang:Next post}<i class="icon-angle-right"></i></a>{/block:NextPost}
+                {block:PreviousPost}<a class="prev"href="{PreviousPost}"><i class="fa fa-angle-left"></i>{lang:Previous post}</a>{/block:PreviousPost}
+                {block:NextPost}<a class="next" href="{NextPost}">{lang:Next post}<i class="fa fa-angle-right"></i></a>{/block:NextPost}
             </div>
         </div>
         {/block:PermalinkPagination}
@@ -183,14 +185,14 @@
         {block:Pagination}
         <div class="row">
             <div class="pagination jump">
-                {block:PreviousPage}<a class="prev" href="{PreviousPage}"><i class="icon-angle-left"></i>{lang:Previous}</a>{/block:PreviousPage}
+                {block:PreviousPage}<a class="prev" href="{PreviousPage}"><i class="fa fa-angle-left"></i>{lang:Previous}</a>{/block:PreviousPage}
     
                 {block:JumpPagination length="5"}
                     {block:CurrentPage}<span class="current-page">{PageNumber}</span>{/block:CurrentPage}
                     {block:JumpPage}<a class="jump-page" href="{URL}">{PageNumber}</a>{/block:JumpPage}
                 {/block:JumpPagination}
     
-                {block:NextPage}<a class="next" href="{NextPage}">{lang:Next}<i class="icon-angle-right"></i></a>{/block:NextPage}
+                {block:NextPage}<a class="next" href="{NextPage}">{lang:Next}<i class="fa fa-angle-right"></i></a>{/block:NextPage}
             </div>
         </div>
         {/block:Pagination}    
@@ -208,10 +210,12 @@
                 </div>
                 <div class="elsewhere">
                     <h3>Elsewhere</h3>
-                    <a href="http://twitter.com/dannydb"><i class="icon-twitter"></i> Twitter</a>
-                    <a href="http://github.com/dannydb"><i class="icon-github"></i> GitHub</a>
-                    <a href="http://facebook.com/danny.debelius"><i class="icon-facebook"></i> Facebook</a>
-                    <a href="{RSS}"><i class="icon-rss"></i> RSS</a>
+                    <a href="http://twitter.com/dannydb"><i class="fa fa-fw fa-twitter"></i> Twitter</a>
+                    <a href="http://github.com/dannydb"><i class="fa fa-fw fa-github"></i></i> GitHub</a>
+                    <a href="http://facebook.com/danny.debelius"><i class="fa  fa-fw fa-facebook"></i> Facebook</a>
+                    <a href="http://instagram.com/dannydb"><i class="fa  fa-fw fa-instagram"></i> Instagram</a>
+                    <a href="{RSS}"><i class="fa fa-fw fa-rss"></i> RSS</a>
+                    
                     
                     
 
@@ -227,7 +231,7 @@
     <script>
     
     $(function() {
-        $(".video").fitVids({ customSelector: "iframe[src^='about:blank']"});
+        $(".video-wrapper").fitVids({ customSelector: "iframe[src^='about:blank']"});
     });
     </script>
     <script type="text/javascript">
