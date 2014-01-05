@@ -450,14 +450,13 @@ section.content {
 		width: 100%;
 		box-sizing: border-box;
 
-		.permalink & {
-			.make-sm-column(10);
-			.make-sm-column-offset(1);
-			.make-md-column(8);
-			.make-md-column-offset(2);
-			.make-lg-column(6);
-			.make-lg-column-offset(3);
-		}
+
+		.make-sm-column(10);
+		.make-sm-column-offset(1);
+		.make-md-column(8);
+		.make-md-column-offset(2);
+		.make-lg-column(6);
+		.make-lg-column-offset(3);
 
 		a {
 			display: table-cell;
@@ -491,6 +490,7 @@ section.content {
 		}
 
 		&.jump {
+			text-align: center;
 
 			.current-page,
 			.jump-page,

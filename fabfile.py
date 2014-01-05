@@ -445,24 +445,24 @@ def deploy(remote='origin'):
     """
     require('settings', provided_by=[production, staging])
 
-    if env.get('deploy_to_servers', False):
-        require('branch', provided_by=[stable, master, branch])
+    # if env.get('deploy_to_servers', False):
+    #     require('branch', provided_by=[stable, master, branch])
 
-    if (env.settings == 'production' and env.branch != 'stable'):
-        _confirm("You are trying to deploy the '%(branch)s' branch to production.\nYou should really only deploy a stable branch.\nDo you know what you're doing?" % env)
+    # if (env.settings == 'production' and env.branch != 'stable'):
+    #     _confirm("You are trying to deploy the '%(branch)s' branch to production.\nYou should really only deploy a stable branch.\nDo you know what you're doing?" % env)
 
     render()
     _gzip_www()
     _deploy_to_s3()
 
-    if env['deploy_to_servers']:
-        checkout_latest(remote)
+    # if env['deploy_to_servers']:
+    #     checkout_latest(remote)
 
-        if env['deploy_crontab']:
-            install_crontab()
+    #     if env['deploy_crontab']:
+    #         install_crontab()
 
-        if env['deploy_services']:
-            deploy_confs()
+    #     if env['deploy_services']:
+    #         deploy_confs()
 
 def write_json_data():
     """
