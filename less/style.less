@@ -463,7 +463,7 @@ section.content {
 			display: table-cell;
 			width: 50%;
 			font-family: @font-family-base;
-			font-size: @font-size-small;
+			font-size: @font-size-base * 0.8;
 			text-transform: uppercase;
 			color: @gray;
 			font-weight: 300;
@@ -608,7 +608,7 @@ footer {
 	section.content {
 		.post {
 			h2 {
-				font-size: 32px;
+				font-size: 3.2rem;
 			}
 
 			p {
@@ -620,7 +620,7 @@ footer {
 				}
 			}
 
-			.photo {
+			&.photo {
 				img {
 					display: block;
 					margin: 0 auto @line-height-computed;
@@ -636,7 +636,7 @@ footer {
 
 				h3 {
 					text-align: left;
-					font-size: 21px;
+					font-size: 2.1rem;
 					line-height: 1.1;
 					margin-bottom: @line-height-computed/2;
 				}
