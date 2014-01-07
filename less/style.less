@@ -461,9 +461,13 @@ section.content {
 		&.text {
 			.photocredit {
 				font-family: @font-family-serif;
-				font-size: @font-size-small;
+				font-size: @font-size-small * 0.9;
 				font-style: italic;
 				text-align: right;
+
+				a {
+					color: @gray-light;
+				}
 			}
 
 			.post-id & {
