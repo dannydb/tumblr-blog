@@ -612,6 +612,24 @@ footer {
 
 #portfolio {
 
+	#header .header-wrap #nav {
+		.make-sm-column(10);
+		.make-sm-column-offset(1);
+		.make-md-column(8);
+		.make-md-column-offset(2);
+		.make-lg-column(6);
+		.make-lg-column-offset(3);
+
+		&:after {
+			content: '';
+			display: block;
+			border-bottom: 1px solid @gray-light;
+			margin-bottom: @line-height-computed;
+			padding-bottom: @line-height-computed;
+
+		}
+	}
+
 	section.content {
 		.post {
 			h2 {
@@ -718,6 +736,16 @@ footer {
 					margin-bottom: @line-height-computed;
 				}
 			}
+		}
+	}
+
+	&.text {
+		#header {
+			margin-bottom: 0;
+		}
+		
+		@media screen and (min-width: @screen-lg){
+			font-size: 62.5%;
 		}
 	}
 }
