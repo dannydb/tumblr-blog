@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="{block:English}en{/block:English}{block:French}fr{/block:French}{block:German}de{/block:German}{block:Japanese}ja{/block:Japanese}{block:Italian}it{/block:Italian}{block:Spanish}es{/block:Spanish}{block:Polish}pl{/block:Polish}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=10.0,initial-scale=1.0" />
+  <meta name="viewport" id="viewport-iphone5" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)" />
+    <title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}</title>
+    {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/modernizr.min.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/beg3ngn.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <link rel="apple-touch-icon" href="{PortraitURL-128}">
+    <link rel="shortcut icon" href="{{ STATIC_URL }}img/monogram-favicon.png">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    <link rel="stylesheet" href="{{ STATIC_CSS }}" />
+    <style type="text/css">
+
+        img {max-width: 100%;height: auto !important;}
+
+        .clearfix {zoom:1;}
+        .clearfix:before, .clearfix:after {
+          content: "\0020";
+          display: block;
+          height: 0;
+          overflow: hidden; }
+        .clearfix:after {clear: both;}
+
+        /*Tumblr inherited */
+        iframe#tumblr_controls {}
+        .search_query {}
+        .read_more_container a {}
+
+        @media only screen and (max-width: 1023px) {
+
+
+        }
+
+        @media handheld, only screen and (max-width: 767px) {
+
+
+        }
+
+    </style>
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 8]><script src="http://static.dannydebelius.com/js/css3-mediaqueries.js"></script><![endif]-->
+    
+    
+</head>
+<body id="portfolio" class="{block:IndexPage}index {/block:IndexPage}{block:PermalinkPage}permalink {block:Posts}{block:Text}text {/block:Text}{block:Photo}photo {/block:Photo}{block:Photoset}photo photoset {/block:Photoset}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audiopost  {/block:Audio}{block:Video}videopost {/block:Video}{/block:Posts}{/block:PermalinkPage}">
+    <header id="header">
+        <div class="header-wrap topbar">
+            <nav>
+                <h1 id="logo"><a href="/" class="name">{Title}</a></h1>
+                <ul id="nav" class="right">
+                    {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
+                    <li><a href="/archive">{lang:Archive}</a></li>
+                </ul>
+                <form id="search" action="/search" method="get">
+                    <input type="text" placeholder="{lang:Search}" name="q" value="{SearchQuery}">
+                    <input type="submit" value="{lang:Search}">
+                </form>
+            </nav>
+        </div>
+    </header>
+    <section class="content">
+
+
+        {block:SearchPage}
+        <div class="result">
+            <p>{lang:Found SearchResultCount results for SearchQuery 2}</p>
+            {block:NoSearchResults}<p>{lang:No results for SearchQuery 2}</p>{/block:NoSearchResults}
+        </div>
+        {/block:SearchPage}
+        {block:TagPage}<div class="result"><p>{lang:TagResultCount posts tagged Tag 3}</p></div>{/block:TagPage}
+
+        {block:Posts}
+        <article class="post {block:Text}text {/block:Text}{block:Photo}photo {/block:Photo}{block:Photoset}photo photoset {/block:Photoset}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audiopost  {/block:Audio}{block:Video}videopost {/block:Video} {TagsAsClasses}">
+            <div class="post-wrapper">
+            {block:Text}
+                {Body}
+            {/block:Text}
+            {block:Quote}
+                <blockquote class="words {Length}">&#8220;{Quote}&#8221;</blockquote>
+                {block:Source}<p class="source">&mdash; {Source}</p>{/block:Source}
+            {/block:Quote}
+            {block:Link}
+                <h3><a href="{URL}" {Target}>{Name}</a></h3>
+                {block:Description}<div class="caption">{Description}</div>{/block:Description}
+            {/block:Link}
+            {block:Video}
+                <div class="video-wrapper">
+                    {Video-700}
+                </div>
+                {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+            {/block:Video}
+            {block:Audio}
+                {block:AlbumArt}<img src="{AlbumArtURL}" alt="">{/block:AlbumArt}
+                {AudioPlayerBlack}
+                {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+            {/block:Audio}
+            {block:Photo}
+                <div class="photo-wrapper">
+                {block:PermalinkPage}
+                    {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
+                    {block:Caption}
+                    <div class="caption">
+                       {Caption}
+                    </div>{/block:Caption}
+                {/block:PermalinkPage}
+                {block:IndexPage}
+                    {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}
+                    {block:Caption}
+                    <div class="caption">
+                        {Caption}
+                    </div>{/block:Caption}
+                {/block:IndexPage}
+                </div>
+            {/block:Photo}
+            {block:Photoset}
+            {block:PermalinkPage}
+                {block:Caption}<div class="caption">
+                   {Caption}
+                </div>{/block:Caption}
+                {block:Photos}
+                    <div class="photo-wrapper">
+                    {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
+                    {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                    </div>
+                {/block:Photos}
+            {/block:PermalinkPage}
+            {block:IndexPage}
+                {block:Caption}<div class="caption">
+                    {Caption}
+                </div>{/block:Caption}
+                {block:Photos}
+                    <div class="photo-wrapper">
+                    {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}
+                    {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                    </div>
+                {/block:Photos}
+            {/block:IndexPage}
+            {/block:Photoset}
+            {block:Chat}
+                {block:Title}<h3>{Title}</h3>{/block:Title}
+                <ul class="conversation">
+                    {block:Lines}
+                    <li class="line {Alt}">
+                        {block:Label}<span class="person">{Label}</span>{/block:Label}
+                        <span class="person-said">{Line}</span>
+                    </li>
+                    {/block:Lines}
+                </ul>
+            {/block:Chat}
+            {block:Answer}
+                <img src="{AskerPortraitURL-40}">
+                {Asker}
+                {Question}
+                {Answer}
+            {/block:Answer}
+            </div><!-- end .post-wrapper -->
+        </article>
+        {/block:Posts}
+
+
+    </section><!--close content-->
+    
+    <footer>
+        <div class="footer-wrapper">
+            <div class="row">
+                <div class="about">
+                    <h3>About</h3>
+                    <div class="description">
+                    <img src="{PortraitURL-128}">
+                    
+                    {block:Description}{Description}{/block:Description}</div>
+                </div>
+                <div class="elsewhere">
+                    <h3>Elsewhere</h3>
+                    <a href="http://twitter.com/dannydb"><i class="fa fa-fw fa-twitter"></i> Twitter</a>
+                    <a href="http://github.com/dannydb"><i class="fa fa-fw fa-github"></i></i> GitHub</a>
+                    <a href="http://facebook.com/danny.debelius"><i class="fa  fa-fw fa-facebook"></i> Facebook</a>
+                    <a href="http://instagram.com/dannydb"><i class="fa  fa-fw fa-instagram"></i> Instagram</a>
+                    <a href="{RSS}"><i class="fa fa-fw fa-rss"></i> RSS</a>
+                    
+                    
+                    
+
+                </div>
+                <div class="copyright">&copy; {CopyrightYears} Danny DeBelius</div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/fitvids.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.rm.js"></script>
+    <script>
+    
+    $(function() {
+        $(".video-wrapper").fitVids({ customSelector: "iframe[src^='about:blank']"});
+    });
+    </script>
+    <script type="text/javascript">
+    
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-146179-4']);
+        _gaq.push(['_setDomainName', 'dannydebelius.com']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    
+    </script>
+</body>
+</html>

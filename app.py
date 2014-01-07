@@ -26,9 +26,9 @@ def test_dir():
     return render_template('index.html', **make_context())
 
 # Render Tumblr theme
-@app.route('/tumblr-theme.html')
-def _tumblr_theme():
-    return render_template('tumblr-theme.html', **make_context())
+@app.route('/<string:slug>-theme.html')
+def _tumblr_theme(slug):
+    return render_template('%s-theme.html' % slug, **make_context())
 
 # Render LESS files on-demand
 @app.route('/less/<string:filename>')
@@ -72,11 +72,10 @@ def _static(path):
 
 
 # Render tumblr theme
-@app.route('/tumblr-theme.html')
-def _render_tumblr_theme():
+@app.route('/<string:slug>-theme.html')
+def _render_tumblr_theme(slug):
     context = flatten_app_config()
-    return render_template('tumblr-theme.html', **context)
-
+    return render_template('%s-theme.html' % slug, **context)
 
 @app.template_filter('urlencode')
 def urlencode_filter(s):

@@ -342,7 +342,7 @@ def _gzip_www():
 """
 Bits about the Tumblr theme.
 """
-def render_theme():
+def render_theme(slug):
     """
     Renders the tumblr theme.
     Requires knowing what environment you want.
@@ -356,29 +356,29 @@ def render_theme():
 
     compiled_includes = []
 
-    path = 'tumblr-theme.html'
+    path = '%s-theme.html' % slug
     with app.app.test_request_context(path=path):
 
         g.compile_includes = True
         g.compiled_includes = compiled_includes
 
         view = app.__dict__['_render_tumblr_theme']
-        content = view()
+        content = view(slug)
 
         compiled_includes = g.compiled_includes
 
-    with open('tumblr-theme.html', 'w') as f:
+    with open(path, 'w') as f:
         f.write(content.encode('utf-8'))
 
     # Un-fake-out deployment target
     app_config.configure_targets(app_config.DEPLOYMENT_TARGET)
 
 
-def copy_theme():
+def copy_theme(slug):
     require('settings', provided_by=[production, staging, development])
 
-    render_theme()
-    local('pbcopy < tumblr-theme.html')
+    render_theme(slug)
+    local('pbcopy < %s-theme.html' % slug)
 
 
 """
