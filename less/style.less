@@ -139,6 +139,10 @@ blockquote {
 					color: #3F5765;
 					font-size: @font-size-small * 0.9;
 					letter-spacing: 0.15em;
+
+					@media screen and (min-width: @screen-md){
+						font-size: @font-size-small * 0.75;
+					}
 				}
 
 				@media screen and (max-width: @screen-xs-max){
@@ -583,6 +587,8 @@ footer {
 	}
 
 	.elsewhere {
+		line-height: 1.2;
+		
 		a {
 			display: block;
 			margin: 0 10px 0 0;
