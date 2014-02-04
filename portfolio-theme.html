@@ -76,6 +76,16 @@
 
         {block:Posts}
         <article class="post {block:Text}text {/block:Text}{block:Photo}photo {/block:Photo}{block:Photoset}photo photoset {/block:Photoset}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audiopost  {/block:Audio}{block:Video}videopost {/block:Video} {TagsAsClasses}">
+            {block:Text}
+            <div class="resume-nav">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#awards">Awards</a></li>
+                </ul>
+            </div>
+            {/block:Text}
             <div class="post-wrapper">
             {block:Text}
                 {Body}
@@ -194,7 +204,9 @@
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://static.dannydebelius.com/tumblr-blog/js/fitvids.min.js"></script>
-    <script type="text/javascript" src="http://static.dannydebelius.com/tumblr-blog/js/jquery.rm.js"></script>
+    <script type="text/javascript" src="http://static.dannydebelius.com/tumblr-blog/js/lib/bootstrap/scrollspy.js"></script>
+    <script type="text/javascript" src="http://static.dannydebelius.com/tumblr-blog/js/lib/bootstrap/affix.js"></script>
+    <script type="text/javascript" src="http://static.dannydebelius.com/tumblr-blog/js/app.js"></script>
     <script>
     
     $(function() {

@@ -72,6 +72,12 @@
 
     this.$element.removeClass(Affix.RESET).addClass('affix' + (affix ? '-' + affix : ''))
 
+    if (affix === false){
+      $('body').addClass('affix-active');
+    } else {
+      $('body').removeClass('affix-active');
+    }
+
     if (affix == 'bottom') {
       this.$element.offset({ top: document.body.offsetHeight - offsetBottom - this.$element.height() })
     }

@@ -1,10 +1,20 @@
-$(function() {
-    var context = $.extend(APP_CONFIG, {
-        'template_path': 'jst/example.html',
-        'config': JSON.stringify(APP_CONFIG, null, 4)
-    });
+$(function(){
+	$('body#portfolio.permalink.text').scrollspy({ target: '.resume-nav' })
 
-    var html = JST.example(context);
+	$('#portfolio.permalink.text .resume-nav .nav').affix({
+		offset: {
+			top: function(){
+				return $('#portfolio.permalink.text .resume-nav').offset().top - 20
+			}
+		}
+	});
 
-    $('#template-example').html(html);
+	$('.resume-nav a').on('click', function(){
+		var selector = $(this).attr('href');
+		var top = $(selector).offset().top;
+		$('html,body').animate({
+		    scrollTop: top
+		}, 1000);
+	})
 });
+
